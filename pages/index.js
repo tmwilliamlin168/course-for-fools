@@ -1,9 +1,49 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import Header from '../components/header.js'
+import Header from '../components/header'
+import useFirebase from '../utils/useFirebase';
 
 export default function Home() {
+  const firebase = useFirebase();
+
+  const firebaseLogin = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
+
+    firebase.auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+        console.log(result)
+        console.log(credential)
+        console.log(token)
+        console.log(user)
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+        console.log(errorCode)
+        console.log(errorMessage)
+        console.log(email)
+        console.log(credential)
+      });
+
+  };
+
   return (
     <>
       <Head>
@@ -28,6 +68,7 @@ export default function Home() {
                   Taught by blah blha blah
                 </p>
                 <div className="mt-8 sm:mt-12 space-x-4">
+                  {/*
                   <Link
                     href="register"
                   >
@@ -36,6 +77,13 @@ export default function Home() {
                       Pre-Register Now
                     </a>
                   </Link>
+                  */}
+                  <button
+                    className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                    onClick={() => firebaseLogin()}
+                  >
+                    Pre-Register Now
+                  </button>
                   <a
                     href="mailto:classes@joincpi.org"
                     target="_blank"
