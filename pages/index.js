@@ -11,6 +11,7 @@ export default function Home() {
       </Head>
       <div>
         <Header />
+        hi
       </div>
     </>
   )
