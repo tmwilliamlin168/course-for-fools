@@ -17,15 +17,15 @@ export default function Home() {
             <div className="mx-auto lg:ml-0 max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center lg:col-span-5">
               <div className="lg:py-24">
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                  <span className="block">Competitive Programming</span>
+                  <span className="block">Competitive Programming:</span>
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 block">
-                    USACO Classes
+                    Zero to Hero
                   </span>
                 </h1>
                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                  Learn USACO through affordable, high-quality classes
-                  with vetted, experienced instructors and a curriculum
-                  designed and developed by past USACO Finalists.
+                  Learn Competitive Programming with no previous experience required.
+                  <br />
+                  Taught by blah blha blah
                 </p>
                 <div className="mt-8 sm:mt-12 space-x-4">
                   <Link
