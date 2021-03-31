@@ -1,14 +1,17 @@
 import Head from 'next/head'
 
+import Header from '../components/header.js'
+
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Course</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      hi
-    </div>
+      <div>
+        <Header />
+      </div>
+    </>
   )
 }
