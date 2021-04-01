@@ -44,18 +44,22 @@ export default function Test({ testData, testAction }) {
         if(timeLeft > 0) {
             return (
                 <div className="h-screen flex flex-col">
-                    <div className="h-16 shadow inset-x-0 text-center">
-                        <div className="float-right">
-                            {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}
-                        </div>
-                        Score: {score}/{problems.length}
-                        <div className="relative pt-1">
-                        <div className="overflow-hidden h-2  mt-7 text-xs flex rounded bg-pink-200">
-                            <div style={{width:`${100*curProb/problems.length}%`, transition:"width 0.3s"}}
-                            className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
+                    <div className="h-16 shadow inset-x-0 text-center text-sm flex flex-col">
+                        <div className="relative flex-1 flex text-xl font-bold justify-center">
+                            <div className="absolute h-full right-0 inline-flex items-center px-6">
+                                {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}
+                            </div>
+                            <div className="inline-flex items-center">
+                                Score: {score}/{problems.length}
                             </div>
                         </div>
-                    </div>
+                        <div className="pt-1 b-0">
+                            <div className="overflow-hidden h-2 text-xs flex rounded bg-pink-200">
+                                <div style={{width:`${100*curProb/problems.length}%`, transition:"width 0.3s"}}
+                                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="flex-1 overflow-y-scroll">
@@ -66,7 +70,7 @@ export default function Test({ testData, testAction }) {
                                 {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                             </>
                         :
-                            <div>
+                            <div className="text-center pt-4 text-xl lg:text-3xl">
                                 This is the last page. Go back to review the problems.
                             </div>
                         }
