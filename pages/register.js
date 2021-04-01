@@ -6,6 +6,14 @@ export default function Register() {
     const firebase = useFirebase();
 
     const [user, setUser] = useState();
+    const [lastTokenRet, ] = useState({time: new Date().getTime()});
+
+    const getIdToken = async () => {
+        const curTime=new Date().getTime();
+        lastTokenRet.time = curTime;
+        const token = await user.getIdToken(true)
+        return token;
+    };
 
     useEffect(() => {
         if(!firebase) return;
@@ -21,13 +29,25 @@ export default function Register() {
     }, [firebase]);
 
     useEffect(() => {
-        const handle = setInterval(async () => {
+        const handle = setInterval(() => {
           const user = firebase.auth().currentUser;
-          if (user) await user.getIdToken(true);
-        }, 10 * 60 * 1000);
+          if (user && new Date().getTime()-lastTokenRet.time > 5*60*1000) getIdToken();
+        }, 6 * 60 * 1000);
         
         return () => clearInterval(handle);
-    }, []);
+    }, [firebase]);
 
-    return "hi";
+    useEffect(() => {
+        if(!user) return;
+        (async () => {
+            fetch(`/api/teststatus?token=${await getIdToken()}`)
+        })();
+    }, [user]);
+
+    return (
+        <>
+            <h1>Test</h1>
+            <p>Loading</p>
+        </>
+    )
 }

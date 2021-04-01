@@ -74,16 +74,6 @@ export default function Home() {
                   Taught by blah blha blah
                 </p>
                 <div className="mt-8 sm:mt-12 space-x-4">
-                  {/*
-                  <Link
-                    href="register"
-                  >
-                    <a className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
->
-                      Pre-Register Now
-                    </a>
-                  </Link>
-                  */}
                   <button
                     className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
                     onClick={() => firebaseLogin()}
