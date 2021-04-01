@@ -10,7 +10,6 @@ export default async (req, res) => {
         return;
     }
 
-    console.log(ui);
     const uid=ui.uid;
     const userRef=usersRef.child(uid);
     let user=await userRef.once('value');
@@ -22,5 +21,5 @@ export default async (req, res) => {
         
     }
 
-    res.status(200).json(user.testData);
+    res.status(200).json(user.val().testData);
 }
