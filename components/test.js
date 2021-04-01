@@ -67,11 +67,11 @@ export default function Test({ testData, testAction }) {
 
                     <div className="flex-1 overflow-y-scroll">
                         {curProb < problems.length ?
-                            <>
+                            <div>
+                                {testData?.problems && testData.problems[curProb]?.ac && <div className="pt-4 text-center text-green-500 text-xl lg:text-3xl font-bold">Correct Answer!</div>}
+                                {testData?.problems && testData.problems[curProb]?.wa && <div className="pt-4 text-center text-red-500 text-xl lg:text-3xl font-bold">Wrong Answer!</div>}
                                 {React.createElement(problems[curProb], {testAction, problemData: testData?.problems && testData.problems[curProb]})}
-                                {testData?.problems && testData.problems[curProb]?.ac && 'Accepted'}
-                                {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
-                            </>
+                            </div>
                         :
                             <div className="text-center pt-4 text-xl lg:text-3xl w-3/4 mx-auto">
                                 This is the last page. Go back to review the problems.
