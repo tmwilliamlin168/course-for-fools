@@ -64,18 +64,18 @@ export default function Home() {
               <div className="lg:py-24">
                 <h1 className="text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                   <span className="block">Competitive Programming:</span>
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 block">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-600 block">
                     Zero to Hero
                   </span>
                 </h1>
                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                   Learn Competitive Programming with no previous experience required.
                   <br />
-                  Taught by tmw god
+                  Taught by the winner of Google Kickstart and IOI.
                 </p>
                 <div className="mt-8 sm:mt-12 space-x-4">
                   <button
-                    className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                    className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-blue-500 text-white font-medium hover:bg-blue-700 transition focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
                     onClick={() => firebaseLogin()}
                   >
                     Pre-Register Now
@@ -83,7 +83,7 @@ export default function Home() {
                   <a
                     href="mailto:ytmwilliamlin@gmail.com"
                     target="_blank"
-                    className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gray-800 text-white font-medium hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:ring-offset-gray-900"
+                    className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gray-800 text-white font-medium hover:bg-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:ring-offset-gray-900 transition"
                   >
                     Contact Us
                   </a>
@@ -92,11 +92,9 @@ export default function Home() {
             </div>
             <div className="mt-12 -mb-16 sm:-mb-48 lg:mt-10 lg:-mb-16 lg:relative lg:col-span-3">
               <div className="mx-auto max-w-md px-4 sm:max-w-xl sm:px-6 lg:max-w-none lg:px-0">
-                {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
                 <img
                   className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                  src="/classes_illustration.svg"
-                  alt=""
+                  src="/courseff.png"
                 />
               </div>
             </div>
