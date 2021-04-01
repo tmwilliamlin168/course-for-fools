@@ -67,11 +67,11 @@ export default function Test({ testData, testAction }) {
                             </>
                         :
                             <div>
-                                This is the last page.
+                                This is the last page. Go back to review the problems.
                             </div>
                         }
                     </div>
-                    <div className="h-16 shadow inset-x-0 text-center font-semibold">
+                    <div className="py-4 shadow inset-x-0 text-center font-semibold">
                         <button className="bg-blue-500 my-2 mx-5 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                             disabled={curProb<=0}
                             onClick={() => setCurProb(curProb-1)}
@@ -85,6 +85,9 @@ export default function Test({ testData, testAction }) {
                         >
                             Next
                         </button>
+                    </div>
+                    <div className="text-sm py-4">
+                        Zero to Hero Pre-Registration Assessment.
                     </div>
                 </div>
             )
