@@ -26,7 +26,7 @@ export default [
         const [value, setValue] = useState();
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl mx-auto w-3/4">If it takes 6 days for 6 groups of 6 programmers to write 6 programs with 600 lines each, how many days does it take 7 groups of 7 programmers to write 7 programs with 700 lines each?</p>
+                <p className="text-xl lg:text-3xl mx-auto w-3/4">If it takes 6 days for 6 groups of 6 programmers to write 6 programs with 600 lines each, how many days does it take 7 groups of 7 programmers to write 7 programs with 700 lines each?</p>
                 <br />
                 {'Answer: '}
                 <input
@@ -47,7 +47,7 @@ export default [
         const [value, setValue] = useState();
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl">Find the next number: 1, 6, 4, 6, 9, 6, 16, 6</p>
+                <p className="text-xl lg:text-3xl">Find the next number: 1, 6, 4, 6, 9, 6, 16, 6</p>
                 <br />
                 {'Answer: '}
                 <input
@@ -68,7 +68,7 @@ export default [
         const [state, setState] = useState(new Array(25).fill(0));
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl">
+                <p className="text-xl lg:text-3xl">
                     Highlight at most 7 cells so that all unhighlighted cells are next to a highlighted cell
                 </p>
                 <br />
@@ -101,10 +101,10 @@ export default [
         const [valueC, setValueC] = useState();
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl">Find any solution for (a, b, c):</p>
-                <p className="text-3xl">a=b(a+b+c)</p>
-                <p className="text-3xl">b(b+c)=a</p>
-                <p className="text-3xl">c=2b</p>
+                <p className="text-xl lg:text-3xl">Find any solution for (a, b, c):</p>
+                <p className="text-xl lg:text-3xl">a=b(a+b+c)</p>
+                <p className="text-xl lg:text-3xl">b(b+c)=a</p>
+                <p className="text-xl lg:text-3xl">c=2b</p>
                 <br />
                 {'Answer: '}
                 <input
@@ -192,7 +192,7 @@ export default [
         }, [problemData?.turn]);
         return (
             <div className="text-center pt-4">
-                <div className="mx-auto text-3xl w-3/4">
+                <div className="mx-auto text-xl lg:text-3xl w-3/4">
                     Let's play a game!
                     <br />
                     You will play against Bob and take turns capturing tiles with your armies. To win the game, you need to have your army separated into fewer regions than Bob. A region is a set of (horizontally) connected cells captured by the same player.
@@ -252,7 +252,7 @@ export default [
         const [valueB, setValueB] = useState();
         return (
             <div className="text-center pt-4">
-                <div className="mx-auto text-3xl w-3/4">
+                <div className="mx-auto text-xl lg:text-3xl w-3/4">
                     Bob wants to play another game!
                     <br />
                     You start by giving him 2 positive integers A and B from 1 to 1000. In one turn, he can either double A and add one to B or double B and add one to A.
@@ -289,7 +289,7 @@ export default [
         const [piles, setPiles] = useState([7, 7, 8, 5, 7]);
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl w-3/4 mx-auto">
+                <p className="text-xl lg:text-3xl w-3/4 mx-auto">
                     After defeating Bob, you think that he's too easy of an opponent for you. Thus, are are now playing yourself. You have five piles of coins. In one turn, you can add one stone to one pile and remove one stone from all the other piles.
                     <br />
                     You win if only one stone is left.
