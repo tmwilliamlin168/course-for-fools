@@ -18,7 +18,7 @@ const Pattern1 = ({a}) => {
 };
 
 const Square1 = ({c}) => {
-    return <div className={"inline-block border border-black h-12 w-12 transition "+c}></div>;
+    return <div className={"inline-block border border-black h-8 w-8 lg:h-12 lg:w-12 transition "+c}></div>;
 }
 
 export default [
