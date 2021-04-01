@@ -73,14 +73,14 @@ export default function Test({ testData, testAction }) {
                         {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                     </div>
                     <div className="h-16 shadow inset-x-0 text-center">
-                        <button class="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        <button className="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             disabled={curProb<=0}
                             onClick={() => setCurProb(curProb-1)}
                         >
                             Back
                         </button>
                         Problem {curProb+1}
-                        <button class="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        <button className="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             disabled={curProb+1>=problems.length}
                             onClick={() => setCurProb(curProb+1)}
                         >
@@ -91,15 +91,15 @@ export default function Test({ testData, testAction }) {
             )
         }
         return (
-            <div class="flex items-center text-center justify-center h-screen  self-auto place-self-center">
+            <div className="flex items-center text-center justify-center h-screen  self-auto place-self-center">
             <div className=" ">
-              <div class="max-w-md bg-blue-300 rounded overflow-hidden shadow-lg">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-3xl mb-2 text-center">Time's up!</div>
-                        <div class="font-bold text-xl text-base">
+              <div className="max-w-md bg-blue-300 rounded overflow-hidden shadow-lg">
+                <div className="px-6 py-4">
+                    <div className="font-bold text-3xl mb-2 text-center">Time's up!</div>
+                        <div className="font-bold text-xl text-base">
                             Final score: {score}  
                         </div>
-                        <p class="text-gray-700 text-base">
+                        <p className="text-gray-700 text-base">
                         Thank you for taking bla bla we'll be in touch something something.
                         </p>
                     </div>
