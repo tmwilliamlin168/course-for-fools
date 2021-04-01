@@ -40,15 +40,17 @@ export default function Register() {
 
     const [testData, setTestData] = useState(null);
 
+    const testAction = async (url) => {
+        const res = await fetch(`${url}token=${await getIdToken()}`)
+        if(res.ok) {
+            const data = await res.json();
+            setTestData(data);
+        }
+    }
+
     useEffect(() => {
         if(!user) return;
-        (async () => {
-            const res = await fetch(`/api/teststatus?token=${await getIdToken()}`)
-            if(res.ok) {
-                const data = await res.json();
-                setTestData(data);
-            }
-        })();
+        testAction('/api/teststatus?');
     }, [user]);
 
     return (
@@ -58,7 +60,7 @@ export default function Register() {
                 !testData?
                     'Loading'
                 :
-                    <Test testData={testData} getIdToken={getIdToken} setTestData={setTestData} />
+                    <Test testData={testData} testAction={testAction} />
             }
         </>
     )

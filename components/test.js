@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import problems from './problems';
 
-export default function Test({ testData, getIdToken, setTestData }) {
+export default function Test({ testData, testAction }) {
     const [timeLeft, setTimeLeft] = useState();
     const [curProb, setCurProb] = useState(0);
 
@@ -26,13 +26,7 @@ export default function Test({ testData, getIdToken, setTestData }) {
                 3. You will need to submit the solution to each problem separately. 
                 <br />
                 <button
-                    onClick={async () => {
-                        const res = await fetch(`/api/teststart?token=${await getIdToken()}`)
-                        if(res.ok) {
-                            const data = await res.json();
-                            setTestData(data);
-                        }
-                    }}
+                    onClick={() => testAction('/api/teststart?')}
                 >
                     Start Test
                 </button>
@@ -48,11 +42,11 @@ export default function Test({ testData, getIdToken, setTestData }) {
                     <h2>Time left: {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}</h2>
                     {problems.map((pr, id) => {
                         return (
-                            <React.Fragment key={id}>
-                                {pr}
+                            <div key={id}>
+                                {pr(testAction)}
                                 {testData.problems && testData.problems[id] && testData.problems[id].ac && 'Accepted'}
                                 {testData.problems && testData.problems[id] && testData.problems[id].wa && 'WA'}
-                            </React.Fragment>
+                            </div>
                         )
                     })}
                 </>

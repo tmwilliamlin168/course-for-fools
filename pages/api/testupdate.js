@@ -6,7 +6,10 @@ const usersRef=database.ref('users');
 
 export default async (req, res) => {
     const pid = +req.query.pid;
-    if(isNaN(pid) || !Number.isInteger(pid))
+    if(isNaN(pid) || !Number.isInteger(pid)) {
+        res.status(400).end();
+        return;
+    }
     const ui = await verifyToken(req.query.token);
     if(!ui) {
         res.status(400).end();
@@ -23,7 +26,7 @@ export default async (req, res) => {
         return;
 	}
 
-    const problemData = (await userRef.child(`testData/problems/${pid}`)).val();
+    const problemData = (await userRef.child(`testData/problems/${pid}`).once('value')).val();
     const newData = checkProblem(pid, problemData, req.query.action);
     if(!newData) {
         res.status(400).end();
