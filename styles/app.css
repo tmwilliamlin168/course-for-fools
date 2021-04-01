@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+	@apply outline-none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button {
+	@apply focus:outline-none;
+	-webkit-tap-highlight-color: transparent;
+}

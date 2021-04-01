@@ -1,5 +1,4 @@
-import 'tailwindcss/tailwind.css';
-
+import '../styles/app.css';
 import {FirebaseProvider} from '../utils/FirebaseContext';
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +7,6 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </FirebaseProvider>
   );
-  //return <div><Component {...pageProps}></Component></div>
 }
 
 export default MyApp

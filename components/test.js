@@ -60,7 +60,7 @@ export default function Test({ testData, testAction }) {
                                 </div>
                             )
                         })*/}
-                        {problems[curProb](testAction)}
+                        {React.createElement(problems[curProb], {testAction})}
                         {testData?.problems && testData.problems[curProb]?.ac && 'Accepted'}
                         {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                     </div>
