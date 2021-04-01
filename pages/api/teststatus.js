@@ -1,8 +1,8 @@
 import {database} from '../../utils/firebase'
 import verifyToken from '../../utils/verifyToken';
 
-export default (req, res) => {
-    const ui = verifyToken(req.query.token);
+export default async (req, res) => {
+    const ui = await verifyToken(req.query.token);
     if(!ui) {
         res.status(400).end();
         return;
