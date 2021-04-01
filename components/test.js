@@ -44,7 +44,7 @@ export default function Test({ testData, testAction }) {
     });
 
     if(testData.stage === 1) {
-        if(timeLeft > 0) {
+        if(timeLeft > 0 && !testData.ended) {
             return (
                 <div className="h-screen flex flex-col">
                     <div className="h-16 shadow inset-x-0 text-center text-sm flex flex-col">
@@ -75,6 +75,14 @@ export default function Test({ testData, testAction }) {
                         :
                             <div className="text-center pt-4 text-xl lg:text-3xl w-3/4 mx-auto">
                                 This is the last page. Go back to review the problems.
+                                <br />
+                                <br />
+                                <button
+                                    onClick={() => testAction('/api/testend?')}
+                                    className="bg-blue-500 text-base hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
+                                >
+                                    End Test
+                                </button>
                             </div>
                         }
                     </div>
