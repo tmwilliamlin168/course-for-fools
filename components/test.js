@@ -118,6 +118,10 @@ export default function Test({ testData, testAction }) {
                         </div>
                         <p className="text-gray-700 text-base">
                             Oops... No offense but seems like you lack a bit of practice...
+                            <br />
+                            Solutions to this pre-registration test will be released soon.
+                            <br />
+                            Come back again once you have learned the fundamentals!
                         </p>
                     </div>
                 </div> 
