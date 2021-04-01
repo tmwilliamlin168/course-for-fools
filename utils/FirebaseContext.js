@@ -18,6 +18,7 @@ export const FirebaseProvider = ({children}) => {
     if (!firebase) {
       const app = import("firebase/app")
       const auth = import("firebase/auth")
+      const analytics = import("firebase/analytics")
 
       Promise.all([app, auth]).then(values => {
         const firebaseInstance = values[0].default
