@@ -62,7 +62,6 @@ export default function Register() {
                 <link rel="icon" href="/favicon.ico" />
                 </Head>
             <Header />
-            <h1>Test</h1>
             {
                 !testData?
                     'Loading'
