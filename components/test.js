@@ -51,7 +51,7 @@ export default function Test({ testData, testAction }) {
                         Score: {score}/{problems.length}
                     </div>
                     <div className="flex-1 overflow-y-scroll">
-                        {problems.map((pr, id) => {
+                        {/*problems.map((pr, id) => {
                             return (
                                 <div key={id}>
                                     {pr(testAction)}
@@ -59,14 +59,23 @@ export default function Test({ testData, testAction }) {
                                     {testData?.problems && testData.problems[id]?.wa && 'WA'}
                                 </div>
                             )
-                        })}
+                        })*/}
+                        {problems[curProb](testAction)}
+                        {testData?.problems && testData.problems[curProb]?.ac && 'Accepted'}
+                        {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                     </div>
                     <div className="h-16 shadow inset-x-0 text-center">
-                        <button>
+                        <button
+                            disabled={curProb<=0}
+                            onClick={() => setCurProb(curProb-1)}
+                        >
                             Back
                         </button>
                         Problem {curProb+1}
-                        <button>
+                        <button
+                            disabled={curProb+1>=problems.length}
+                            onClick={() => setCurProb(curProb+1)}
+                        >
                             Next
                         </button>
                     </div>
