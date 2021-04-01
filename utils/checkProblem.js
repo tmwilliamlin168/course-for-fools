@@ -81,6 +81,9 @@ const problemCheckers = [
     (oldData, action) => {
         return {wa: 1};
     },
+    (oldData, action) => {
+        return {};
+    },
 ];
 
 export default function checkProblem(pid, oldData, action) {

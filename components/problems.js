@@ -285,4 +285,43 @@ export default [
             </div>
         )
     },
+    ({testAction}) => {
+        const [piles, setPiles] = useState([7, 7, 8, 5, 7]);
+        return (
+            <div className="text-center pt-4">
+                <p className="text-3xl w-3/4 mx-auto">
+                    After defeating Bob, you think that he's too easy of an opponent for you. Thus, are are now playing yourself. You have five piles of coins. In one turn, you can add one stone to one pile and remove one stone from all the other piles.
+                    <br />
+                    You win if only one stone is left.
+                </p>
+                <br />
+                {piles.map((p, i) => 
+                    <button
+                        key={i}
+                        className="rounded bg-blue-500 text-white text-2xl py-2 px-4 m-2"
+                        disabled={piles.some((p2, j) => j !== i && !p2)}
+                        onClick={() => {
+                            const newPiles=[...piles];
+                            for(let j=0; j<piles.length; ++j)
+                                --newPiles[j];
+                            newPiles[i] += 2;
+                            setPiles(newPiles);
+                        }}
+                    >
+                        {p} stones
+                    </button>
+                )}
+                <br />
+                <button
+                    className="rounded bg-blue-500 py-2 px-4 text-white text-2xl"
+                    onClick={() => {
+                        testAction('/api/testupdate?pid=7&action=reset&');
+                        setPiles([7, 7, 8, 5, 7]);
+                    }}
+                >
+                    Reset
+                </button>
+            </div>
+        );
+    },
 ];
