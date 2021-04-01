@@ -43,20 +43,34 @@ export default function Test({ testData, testAction }) {
     if(testData.stage === 1) {
         if(timeLeft > 0) {
             return (
-                <>
-                    <h1>The Actual Test</h1>
-                    <h2>Current score: {score}</h2>
-                    <h2>Time left: {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}</h2>
-                    {problems.map((pr, id) => {
-                        return (
-                            <div key={id}>
-                                {pr(testAction)}
-                                {testData?.problems && testData.problems[id]?.ac && 'Accepted'}
-                                {testData?.problems && testData.problems[id]?.wa && 'WA'}
-                            </div>
-                        )
-                    })}
-                </>
+                <div className="h-screen flex flex-col">
+                    <div className="h-16 shadow inset-x-0 text-center">
+                        <div className="float-right">
+                            {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}
+                        </div>
+                        Score: {score}/{problems.length}
+                    </div>
+                    <div className="flex-1 overflow-y-scroll">
+                        {problems.map((pr, id) => {
+                            return (
+                                <div key={id}>
+                                    {pr(testAction)}
+                                    {testData?.problems && testData.problems[id]?.ac && 'Accepted'}
+                                    {testData?.problems && testData.problems[id]?.wa && 'WA'}
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className="h-16 shadow inset-x-0 text-center">
+                        <button>
+                            Back
+                        </button>
+                        Problem {curProb+1}
+                        <button>
+                            Next
+                        </button>
+                    </div>
+                </div>
             )
         }
         return (
