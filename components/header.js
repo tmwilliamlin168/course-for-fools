@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 const internalLinks = [
 {
-    label: "Register",
+    label: "Pre-Register",
     url: "/register",
 },
 {
     label: "Contact",
-    url: "mailto:course@williamlin.io",
+    url: "mailto:ytmwilliamlin@gmail.com",
 },
 ];
 

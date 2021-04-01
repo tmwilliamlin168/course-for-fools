@@ -81,7 +81,7 @@ export default function Home() {
                     Pre-Register Now
                   </button>
                   <a
-                    href="mailto:classes@joincpi.org"
+                    href="mailto:ytmwilliamlin@gmail.com"
                     target="_blank"
                     className="inline-flex sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-md shadow bg-gray-800 text-white font-medium hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:ring-offset-gray-900"
                   >
