@@ -20,12 +20,12 @@ const Pattern1 = ({a}) => {
 export default [
     ({testAction}) => {
         const patterns = [
-            [0, 2, 0],
+            [2, 2, 2],
             [1, 2, 1],
             [2, 1, 1],
             [0, 0, 2],
             [1, 1, 0],
-            [0, 1, 0],
+            [2, 1, 0],
         ];
 
         const [selected, setSelected] = useState(-1);
