@@ -61,6 +61,44 @@ export default [
         );
     },
     ({testAction}) => {
+        const [valueA, setValueA] = useState();
+        const [valueB, setValueB] = useState();
+        const [valueC, setValueC] = useState();
+        return (
+            <div className="text-center pt-4">
+                <p className="text-3xl">Find any solution for (a, b, c):</p>
+                <p className="text-3xl">a=b(a+b+c)</p>
+                <p className="text-3xl">b(b+c)=a</p>
+                <p className="text-3xl">c=2b</p>
+                <br />
+                {'Answer: '}
+                <input
+                    type="number"
+                    value={valueA}
+                    onChange={e => setValueA(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <input
+                    type="number"
+                    value={valueB}
+                    onChange={e => setValueB(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <input
+                    type="number"
+                    value={valueC}
+                    onChange={e => setValueC(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <br />
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=2&action=${valueA}${valueB}${valueC}&`)}
+                />
+            </div>
+        )
+    },
+    ({testAction}) => {
         const patterns = [
             [2, 2, 2],
             [1, 2, 1],
@@ -106,7 +144,7 @@ export default [
                 </div>
                 <br />
                 <SubmitButton
-                    onClick={() => testAction(`/api/testupdate?pid=2&action=${selected}&`)}
+                    onClick={() => testAction(`/api/testupdate?pid=3&action=${selected}&`)}
                 />
             </div>
         )
