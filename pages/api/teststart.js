@@ -19,8 +19,7 @@ export default async (req, res) => {
         return;
 	}
 
-    await userRef.child('testData/stage').set(1);
-    await userRef.child('testData/startTime').set(new Date().getTime());
+    await userRef.child('testData').set({stage: 1, startTime: new Date().getTime()});
 
     res.status(200).json((await userRef.once('value')).val().testData);
 }
