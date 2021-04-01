@@ -83,10 +83,20 @@ export default function Test({ testData, testAction }) {
             )
         }
         return (
-            <div className="h-screen flex flex-col">
-                <p>Time's up!</p>
-                <p>Final score: {score}</p>
-                <p>Thank you for taking bla bla we'll be in touch something something.</p>
+            <div class="flex items-center text-center justify-center h-screen  self-auto place-self-center">
+            <div className=" ">
+              <div class="max-w-md bg-blue-300 rounded overflow-hidden shadow-lg">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-3xl mb-2 text-center">Time's up!</div>
+                        <div class="font-bold text-xl text-base">
+                            Final score: {score}  
+                        </div>
+                        <p class="text-gray-700 text-base">
+                        Thank you for taking bla bla we'll be in touch something something.
+                        </p>
+                    </div>
+                </div> 
+              </div>
             </div>
         )
     }
