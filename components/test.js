@@ -1,4 +1,16 @@
+import { useEffect, useState } from "react";
+
 export default function Test({ testData, getIdToken, setTestData }) {
+    const [timeLeft, setTimeLeft] = useState();
+
+    useEffect(() => {
+        if(testData.stage === 1) {
+            setTimeLeft(Math.max(Math.floor(30*60-(new Date().getTime()-testData.startTime)/1000), 0));
+            const interval=setInterval(() => setTimeLeft(t => t-1), 1000);
+            return () => clearInterval(interval);
+        }
+    }, [testData.stage]);
+
     if(testData.stage === 0) {
         return (
             <>
@@ -24,9 +36,18 @@ export default function Test({ testData, getIdToken, setTestData }) {
             </>
         )
     }
+
     if(testData.stage === 1) {
+        if(timeLeft > 0) {
+            return (
+                <>
+                    <h1>The Actual Test</h1>
+                    <h2>Time left: {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}</h2>
+                </>
+            )
+        }
         return (
-            "the actual test"
+            "no time left"
         )
     }
 };
