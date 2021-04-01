@@ -4,8 +4,10 @@ import {useEffect, useState} from 'react';
 import Test from '../components/test';
 import Header from '../components/header';
 import useFirebase from '../utils/useFirebase';
+import { useRouter } from 'next/router';
 
 export default function Register() {
+    const router = useRouter();
     const firebase = useFirebase();
 
     const [user, setUser] = useState();
@@ -23,6 +25,7 @@ export default function Register() {
         return firebase.auth().onIdTokenChanged(async (user) => {
           if (!user) {
             setUser(null);
+            router.push('/');
           } else {
             const token = await user.getIdToken();
             setUser(user);
