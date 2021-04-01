@@ -162,7 +162,7 @@ export default [
                 </div>
                 <br />
                 <br />
-                <p className="text-3xl">Select the best matching pattern:</p>
+                <p className="text-xl lg:text-3xl">Select the best matching pattern:</p>
                 <br />
                 <div className="inline-grid grid-cols-3 gap-2 my-4">
                     {patterns.map((p, i) => {
