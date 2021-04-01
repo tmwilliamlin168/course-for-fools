@@ -79,6 +79,9 @@ const problemCheckers = [
         oldData.board[c[0]][c[1]]='b';
         return oldData;
     },
+    (oldData, action) => {
+        return {wa: 1};
+    },
 ];
 
 export default function checkProblem(pid, oldData, action) {

@@ -247,4 +247,41 @@ export default [
             </div>
         );
     },
+    ({testAction}) => {
+        const [valueA, setValueA] = useState();
+        const [valueB, setValueB] = useState();
+        return (
+            <div className="text-center pt-4">
+                <div className="mx-auto text-3xl w-3/4">
+                    Bob wants to play another game!
+                    <br />
+                    You start by giving him 2 positive integers A and B from 1 to 1000. In one turn, he can either double A and add one to B or double B and add one to A.
+                    <br />
+                    Here's an example sequence of steps that he could take:
+                    <br />
+                    {'(0, 1) => (1, 2) => (2, 3) => (4, 4) => (8, 5)'}
+                    <br />
+                    You want to prevent him from making A and B equal. Choose A and B for him so that he will lose no matter what!
+                </div>
+                <br />
+                {'Answer: '}
+                <input
+                    type="number"
+                    value={valueA}
+                    onChange={e => setValueA(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <input
+                    type="number"
+                    value={valueB}
+                    onChange={e => setValueB(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=6&action=${valueA},${valueB}&`)}
+                />
+            </div>
+        )
+    },
 ];
