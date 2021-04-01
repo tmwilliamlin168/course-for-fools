@@ -22,7 +22,7 @@ export default [
         const [value, setValue] = useState();
         return (
             <div className="text-center pt-4">
-                <p className="text-3xl">Find the next number: 1, 6, 4, 6, 9, 6, 16, 6</p>
+                <p className="text-3xl mx-auto w-3/4">If it takes 6 days for 6 groups of 6 programmers to write 6 programs with 600 lines each, how many days does it take 7 groups of 7 programmers to write 7 programs with 700 lines each?</p>
                 <br />
                 {'Answer: '}
                 <input
@@ -35,6 +35,27 @@ export default [
                 <br />
                 <SubmitButton
                     onClick={() => testAction(`/api/testupdate?pid=0&action=${value}&`)}
+                />
+            </div>
+        );
+    },
+    ({testAction}) => {
+        const [value, setValue] = useState();
+        return (
+            <div className="text-center pt-4">
+                <p className="text-3xl">Find the next number: 1, 6, 4, 6, 9, 6, 16, 6</p>
+                <br />
+                {'Answer: '}
+                <input
+                    type="number"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <br />
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=1&action=${value}&`)}
                 />
             </div>
         );
@@ -85,7 +106,7 @@ export default [
                 </div>
                 <br />
                 <SubmitButton
-                    onClick={() => testAction(`/api/testupdate?pid=1&action=${selected}&`)}
+                    onClick={() => testAction(`/api/testupdate?pid=2&action=${selected}&`)}
                 />
             </div>
         )
