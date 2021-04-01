@@ -1,4 +1,3 @@
-import { CssSyntaxError } from "postcss";
 import verifyInteger from "./verifyInteger";
 
 const problemCheckers = [
