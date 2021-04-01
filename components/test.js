@@ -36,7 +36,7 @@ export default function Test({ testData, testAction }) {
 
     let score=0;
     problems.forEach((pr, id) => {
-        if(testData?.problems[id]?.ac)
+        if(testData?.problems && testData.problems[id]?.ac)
             ++score;
     });
 
@@ -51,8 +51,8 @@ export default function Test({ testData, testAction }) {
                         return (
                             <div key={id}>
                                 {pr(testAction)}
-                                {testData?.problems[id]?.ac && 'Accepted'}
-                                {testData?.problems[id]?.wa && 'WA'}
+                                {testData?.problems && testData.problems[id]?.ac && 'Accepted'}
+                                {testData?.problems && testData.problems[id]?.wa && 'WA'}
                             </div>
                         )
                     })}
