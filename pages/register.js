@@ -37,17 +37,25 @@ export default function Register() {
         return () => clearInterval(handle);
     }, [firebase]);
 
+    const [testData, setTestData] = useState(null);
+
     useEffect(() => {
         if(!user) return;
         (async () => {
-            fetch(`/api/teststatus?token=${await getIdToken()}`)
+            const res = await fetch(`/api/teststatus?token=${await getIdToken()}`)
+            if(res.ok) {
+                const data = await res.json();
+                setTestData(data);
+            }
         })();
     }, [user]);
 
     return (
         <>
             <h1>Test</h1>
-            <p>Loading</p>
+            <p>
+                {!testData?'Loading':JSON.stringify(testData)}
+            </p>
         </>
     )
 }
