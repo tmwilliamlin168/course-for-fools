@@ -18,7 +18,7 @@ const Pattern1 = ({a}) => {
 };
 
 const Square1 = ({c}) => {
-    return <div className={"inline-block border border-black h-12 w-12 "+c}></div>;
+    return <div className={"inline-block border border-black h-12 w-12 transition "+c}></div>;
 }
 
 export default [
@@ -33,7 +33,7 @@ export default [
                     type="number"
                     value={value}
                     onChange={e => setValue(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <br />
                 <br />
@@ -54,7 +54,7 @@ export default [
                     type="number"
                     value={value}
                     onChange={e => setValue(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <br />
                 <br />
@@ -77,7 +77,7 @@ export default [
                         return (
                             <button
                                 key={i}
-                                className={'inline-block w-14 h-14 border border-blue-500'+(s?' bg-blue-500':'')}
+                                className={'inline-block w-14 h-14 border border-blue-500 transition'+(s?' bg-blue-500':'')}
                                 onClick={() => {
                                     const newState = [...state];
                                     newState[i]=1-newState[i];
@@ -111,19 +111,19 @@ export default [
                     type="number"
                     value={valueA}
                     onChange={e => setValueA(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <input
                     type="number"
                     value={valueB}
                     onChange={e => setValueB(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <input
                     type="number"
                     value={valueC}
                     onChange={e => setValueC(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <br />
                 <br />
@@ -239,7 +239,7 @@ export default [
                 })}
                 <br />
                 <button
-                    className="rounded bg-blue-500 py-2 px-4 text-white text-2xl"
+                    className="bg-blue-500 my-2 mx-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                     onClick={() => testAction('/api/testupdate?pid=5&action=reset&')}
                 >
                     Reset
@@ -269,13 +269,13 @@ export default [
                     type="number"
                     value={valueA}
                     onChange={e => setValueA(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <input
                     type="number"
                     value={valueB}
                     onChange={e => setValueB(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
                 />
                 <br />
                 <br />
@@ -298,7 +298,7 @@ export default [
                 {piles.map((p, i) => 
                     <button
                         key={i}
-                        className="rounded bg-blue-500 text-white text-2xl py-2 px-4 m-2"
+                        className="rounded bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition m-2"
                         disabled={piles.some((p2, j) => j !== i && !p2)}
                         onClick={() => {
                             const newPiles=[...piles];
@@ -313,7 +313,7 @@ export default [
                 )}
                 <br />
                 <button
-                    className="rounded bg-blue-500 py-2 px-4 text-white text-2xl"
+                    className="bg-blue-500 my-2 mx-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                     onClick={() => {
                         testAction('/api/testupdate?pid=7&action=reset&');
                         setPiles([7, 7, 8, 5, 7]);

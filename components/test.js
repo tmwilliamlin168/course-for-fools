@@ -72,14 +72,14 @@ export default function Test({ testData, testAction }) {
                         }
                     </div>
                     <div className="py-4 shadow inset-x-0 text-center font-semibold">
-                        <button className="bg-blue-500 my-2 mx-5 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
+                        <button className="bg-blue-500 my-2 mx-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                             disabled={curProb<=0}
                             onClick={() => setCurProb(curProb-1)}
                         >
                             Back
                         </button>
                         Problem {Math.min(curProb+1, problems.length)}
-                        <button className="bg-blue-500 my-2 mx-5 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
+                        <button className="bg-blue-500 my-2 mx-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                             disabled={curProb>=problems.length}
                             onClick={() => setCurProb(curProb+1)}
                         >
