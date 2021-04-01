@@ -286,7 +286,7 @@ export default [
         )
     },
     ({testAction}) => {
-        const [piles, setPiles] = useState([7, 7, 8, 5, 7]);
+        const [piles, setPiles] = useState([7, 7, 9, 5, 7]);
         return (
             <div className="text-center pt-4">
                 <p className="text-xl lg:text-3xl w-3/4 mx-auto">
