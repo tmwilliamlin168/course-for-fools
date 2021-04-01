@@ -16,17 +16,20 @@ export default function Test({ testData, testAction }) {
 
     if(testData.stage === 0) {
         return (
-            <div className="h-screen flex flex-col">
+            <div className="text-center pt-4 text-xl lg:text-3xl w-3/4 mx-auto">
                 <p>
                 To pre-register for this course, some very basic math and logic skills will be required. An assessment will be given to determine if you are eligible for the beta version of this course, as well as help you identify any skills that should be improved (if any).
                 </p>
+                <br />
                 <ol>
-                <li>You have 30 minutes to complete this assessment.</li>
-                <li>You will need a score of 6 or above to pass.</li>
-                <li>You will need to submit the solution to each problem separately.</li>
+                <li>1. You have 30 minutes to complete this assessment.</li>
+                <li>2. You will need a score of 6 or above to pass.</li>
+                <li>3. You will need to submit the solution to each problem separately.</li>
                 </ol>
+                <br />
                 <button
                     onClick={() => testAction('/api/teststart?')}
+                    className="bg-blue-500 text-base hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                 >
                     Start Test
                 </button>
@@ -70,7 +73,7 @@ export default function Test({ testData, testAction }) {
                                 {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                             </>
                         :
-                            <div className="text-center pt-4 text-xl lg:text-3xl">
+                            <div className="text-center pt-4 text-xl lg:text-3xl w-3/4 mx-auto">
                                 This is the last page. Go back to review the problems.
                             </div>
                         }
