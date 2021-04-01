@@ -19,6 +19,27 @@ const Pattern1 = ({a}) => {
 
 export default [
     ({testAction}) => {
+        const [value, setValue] = useState();
+        return (
+            <div className="text-center pt-4">
+                <p className="text-3xl">Find the next number: 1, 6, 4, 6, 9, 6, 16, 6</p>
+                <br />
+                {'Answer: '}
+                <input
+                    type="number"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    className="rounded-md border border-blue-500 outline-none p-1"
+                />
+                <br />
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=0&action=${value}&`)}
+                />
+            </div>
+        );
+    },
+    ({testAction}) => {
         const patterns = [
             [2, 2, 2],
             [1, 2, 1],
@@ -64,7 +85,7 @@ export default [
                 </div>
                 <br />
                 <SubmitButton
-                    onClick={() => testAction(`/api/testupdate?pid=0&action=${selected}&`)}
+                    onClick={() => testAction(`/api/testupdate?pid=1&action=${selected}&`)}
                 />
             </div>
         )
