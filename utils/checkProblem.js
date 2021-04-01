@@ -71,7 +71,7 @@ const problemCheckers = [
                 if(oldData.board[i][0] === '.')
                     cs.push([i, 0]);
                 if(oldData.board[i][s[i]-1] === '.')
-                    cs.push([i, cs[i]-1]);
+                    cs.push([i, s[i]-1]);
             }
         }
         const c=cs[Math.floor(Math.random()*cs.length)];
