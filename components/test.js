@@ -22,7 +22,7 @@ export default function Test({ testData, testAction }) {
                 </p>
                 <ol>
                 <li>You have 30 minutes to complete this assessment.</li>
-                <li>You will need a score of 60% or above to pass.</li>
+                <li>You will need a score of 6 or above to pass.</li>
                 <li>You will need to submit the solution to each problem separately.</li>
                 </ol>
                 <button
