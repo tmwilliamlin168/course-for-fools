@@ -53,7 +53,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Course</title>
+        <title>CP: Zero to Hero</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen">

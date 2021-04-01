@@ -61,7 +61,7 @@ export default function Register() {
     return (
         <>
             <Head>
-                <title>Course | Register</title>
+                <title>CP: Zero to Hero | Register</title>
                 <link rel="icon" href="/favicon.ico" />
                 </Head>
             {testData?.stage === 0 && <Header />}
