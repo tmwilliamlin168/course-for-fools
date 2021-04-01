@@ -117,7 +117,7 @@ export default function Test({ testData, testAction }) {
                             Final score: {score}  
                         </div>
                         <p className="text-gray-700 text-base">
-                        Thank you for taking bla bla we'll be in touch something something.
+                            Oops... No offense but seems like you lack a bit of practice...
                         </p>
                     </div>
                 </div> 
