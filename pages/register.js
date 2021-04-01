@@ -63,13 +63,22 @@ export default function Register() {
                     3. You will need to submit the solution to each problem separately. 
                     <br />
                     <button
-                        onClick={() => {
-
+                        onClick={async () => {
+                            const res = await fetch(`/api/teststart?token=${await getIdToken()}`)
+                            if(res.ok) {
+                                const data = await res.json();
+                                setTestData(data);
+                            }
                         }}
                     >
                         Start Test
                     </button>
                 </>
+            )
+        }
+        if(testData.stage === 1) {
+            return (
+                "the actual test"
             )
         }
     };
