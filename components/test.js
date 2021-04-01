@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import problems from './problems';
 
 export default function Test({ testData, getIdToken, setTestData }) {
     const [timeLeft, setTimeLeft] = useState();
+    const [curProb, setCurProb] = useState(0);
 
     useEffect(() => {
         if(testData.stage === 1) {
@@ -43,6 +46,15 @@ export default function Test({ testData, getIdToken, setTestData }) {
                 <>
                     <h1>The Actual Test</h1>
                     <h2>Time left: {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}</h2>
+                    {problems.map((pr, id) => {
+                        return (
+                            <React.Fragment key={id}>
+                                {pr}
+                                {testData.problems && testData.problems[id] && testData.problems[id].ac && 'Accepted'}
+                                {testData.problems && testData.problems[id] && testData.problems[id].wa && 'WA'}
+                            </React.Fragment>
+                        )
+                    })}
                 </>
             )
         }
