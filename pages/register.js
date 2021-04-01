@@ -61,7 +61,7 @@ export default function Register() {
                 <title>Course | Register</title>
                 <link rel="icon" href="/favicon.ico" />
                 </Head>
-            <Header />
+            {testData.stage === 0 && <Header />}
             {
                 !testData?
                     'Loading'
