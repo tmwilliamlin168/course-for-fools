@@ -223,6 +223,11 @@ export default [
                                             key={j}
                                             disabled={waiting || problemData?.board && problemData.board[i][j] !== '.'}
                                             onClick={() => {
+                                                if(!problemData.board) {
+                                                    problemData.board = new Array();
+                                                    for(let i=0; i<size.length; ++i)
+                                                        problemData.board.push(new Array(size[i]).fill('.'));
+                                                }
                                                 problemData.board[i][j]='r';
                                                 setWaiting(true);
                                                 testAction(`/api/testupdate?pid=5&action=${i},${j}&`);
