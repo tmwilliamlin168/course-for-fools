@@ -65,14 +65,14 @@ export default function Test({ testData, testAction }) {
                         {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
                     </div>
                     <div className="h-16 shadow inset-x-0 text-center">
-                        <button
+                        <button class="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             disabled={curProb<=0}
                             onClick={() => setCurProb(curProb-1)}
                         >
                             Back
                         </button>
                         Problem {curProb+1}
-                        <button
+                        <button class="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             disabled={curProb+1>=problems.length}
                             onClick={() => setCurProb(curProb+1)}
                         >
