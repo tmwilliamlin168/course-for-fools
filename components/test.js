@@ -59,18 +59,17 @@ export default function Test({ testData, testAction }) {
                     </div>
 
                     <div className="flex-1 overflow-y-scroll">
-                        {/*problems.map((pr, id) => {
-                            return (
-                                <div key={id}>
-                                    {pr(testAction)}
-                                    {testData?.problems && testData.problems[id]?.ac && 'Accepted'}
-                                    {testData?.problems && testData.problems[id]?.wa && 'WA'}
-                                </div>
-                            )
-                        })*/}
-                        {React.createElement(problems[curProb], {testAction, problemData: testData?.problems && testData.problems[curProb]})}
-                        {testData?.problems && testData.problems[curProb]?.ac && 'Accepted'}
-                        {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
+                        {curProb < problems.length ?
+                            <>
+                                {React.createElement(problems[curProb], {testAction, problemData: testData?.problems && testData.problems[curProb]})}
+                                {testData?.problems && testData.problems[curProb]?.ac && 'Accepted'}
+                                {testData?.problems && testData.problems[curProb]?.wa && 'WA'}
+                            </>
+                        :
+                            <div>
+                                This is the last page.
+                            </div>
+                        }
                     </div>
                     <div className="h-16 shadow inset-x-0 text-center">
                         <button className="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -79,9 +78,9 @@ export default function Test({ testData, testAction }) {
                         >
                             Back
                         </button>
-                        Problem {curProb+1}
+                        Problem {Math.min(curProb+1, problems.length)}
                         <button className="bg-blue-500 m-2 focus:outline-none hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                            disabled={curProb+1>=problems.length}
+                            disabled={curProb>=problems.length}
                             onClick={() => setCurProb(curProb+1)}
                         >
                             Next
