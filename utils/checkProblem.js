@@ -1,6 +1,6 @@
 const problemCheckers = [
     (oldData, action) => {
-        if(action === 'a')
+        if(action === '0')
             return {ac: 1};
         return {wa: 1};
     }

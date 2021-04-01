@@ -1,5 +1,7 @@
 import {useState} from 'react';
 
+import SubmitButton from './SubmitButton';
+
 const Pattern1 = ({a}) => {
     const b=['', ' top-16', ' top-32'];
     const c=[' top-16', ' top-8', ''];
@@ -26,7 +28,7 @@ export default [
             [0, 1, 0],
         ];
 
-        const [selected, setSelected] = useState(0);
+        const [selected, setSelected] = useState(-1);
         
         return (
             <div className="text-center pt-4">
@@ -47,7 +49,7 @@ export default [
                 <br />
                 <p className="text-3xl">Select the best matching pattern:</p>
                 <br />
-                <div className="inline-grid grid-cols-3 gap-2">
+                <div className="inline-grid grid-cols-3 gap-2 my-4">
                     {patterns.map((p, i) => {
                         return (
                             <button
@@ -60,6 +62,10 @@ export default [
                         )
                     })}
                 </div>
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=0&action=${selected}&`)}
+                />
             </div>
         )
     },
