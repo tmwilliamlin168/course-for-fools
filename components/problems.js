@@ -316,7 +316,7 @@ export default [
                     className="bg-blue-500 my-2 mx-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition"
                     onClick={() => {
                         testAction('/api/testupdate?pid=7&action=reset&');
-                        setPiles([7, 7, 8, 5, 7]);
+                        setPiles([7, 7, 9, 5, 7]);
                     }}
                 >
                     Reset
