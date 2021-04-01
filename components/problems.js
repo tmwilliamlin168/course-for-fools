@@ -3,15 +3,15 @@ import {useEffect, useState} from 'react';
 import SubmitButton from './SubmitButton';
 
 const Pattern1 = ({a}) => {
-    const b=['', ' top-16', ' top-32'];
-    const c=[' top-16', ' top-8', ''];
-    const d=[' h-16', ' h-32', ' h-48'];
+    const b=['', ' top-8 lg:top-16', ' top-16 lg:top-32'];
+    const c=[' top-8 lg:top-16', ' top-4 lg:top-8', ''];
+    const d=[' h-8 lg:h-16', ' h-16 lg:h-32', ' h-24 lg:h-48'];
     return (
-        <div className="inline-block w-48 h-48">
+        <div className="inline-block w-24 h-24 lg:w-48 lg:h-48">
             <div className="relative">
-                <div className={"absolute rounded-full h-16 w-16 bg-blue-500 "+b[a[0]]}></div>
-                <div className={"absolute rounded left-16 inline-block w-16 bg-green-500 "+c[a[1]]+d[a[1]]}></div>
-                <div className={"absolute left-32 rounded-full h-16 w-16 bg-blue-500 "+b[a[2]]}></div>
+                <div className={"absolute rounded-full h-8 w-8 lg:h-16 lg:w-16 bg-blue-500 "+b[a[0]]}></div>
+                <div className={"absolute rounded left-8 lg:left-16 inline-block w-8 lg:w-16 bg-green-500 "+c[a[1]]+d[a[1]]}></div>
+                <div className={"absolute left-16 lg:left-32 rounded-full h-8 w-8 lg:h-16 lg:w-16 bg-blue-500 "+b[a[2]]}></div>
             </div>
         </div>
     );
@@ -33,7 +33,7 @@ export default [
                     type="number"
                     value={value}
                     onChange={e => setValue(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <br />
                 <br />
@@ -54,7 +54,7 @@ export default [
                     type="number"
                     value={value}
                     onChange={e => setValue(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <br />
                 <br />
@@ -111,19 +111,19 @@ export default [
                     type="number"
                     value={valueA}
                     onChange={e => setValueA(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <input
                     type="number"
                     value={valueB}
                     onChange={e => setValueB(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <input
                     type="number"
                     value={valueC}
                     onChange={e => setValueC(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <br />
                 <br />
@@ -170,7 +170,7 @@ export default [
                             <button
                                 key={i}
                                 onClick={() => setSelected(i)}
-                                className={i === selected ? 'ring-2 ring-blue-500' : ''}
+                                className={i === selected ? 'rounded ring-2 ring-blue-500 transition' : ''}
                             >
                                 <Pattern1 a={p} />
                             </button>
@@ -269,13 +269,13 @@ export default [
                     type="number"
                     value={valueA}
                     onChange={e => setValueA(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <input
                     type="number"
                     value={valueB}
                     onChange={e => setValueB(e.target.value)}
-                    className="rounded-md border border-blue-500 outline-none p-1 mx-1"
+                    className="rounded-md border border-blue-500 outline-none p-1 m-1"
                 />
                 <br />
                 <br />
