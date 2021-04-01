@@ -290,7 +290,7 @@ export default [
         return (
             <div className="text-center pt-4">
                 <p className="text-xl lg:text-3xl w-3/4 mx-auto">
-                    After defeating Bob, you think that he's too easy of an opponent for you. Thus, are are now playing yourself. You have five piles of coins. In one turn, you can add one stone to one pile and remove one stone from all the other piles.
+                    After defeating Bob, you think that he's too easy of an opponent for you. Thus, you are now playing yourself. You have five piles of coins. In one turn, you can add one stone to one pile and remove one stone from all the other piles.
                     <br />
                     You win if only one stone is left.
                 </p>
