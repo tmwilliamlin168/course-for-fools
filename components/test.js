@@ -110,7 +110,7 @@ export default function Test({ testData, testAction }) {
         return (
             <div className="flex items-center text-center justify-center h-screen  self-auto place-self-center">
             <div className=" ">
-              <div className="max-w-md bg-blue-300 rounded overflow-hidden shadow-lg">
+              <div className="max-w-lg bg-blue-300 rounded overflow-hidden shadow-lg">
                 <div className="px-6 py-4">
                     <div className="font-bold text-3xl mb-2 text-center">Time's up!</div>
                         <div className="font-bold text-xl text-base">
