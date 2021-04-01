@@ -1,4 +1,4 @@
-import {database} from './firebase'
+import {auth} from './firebase'
 
 export default async function verifyToken(token) {
     if(typeof token !== 'string')
