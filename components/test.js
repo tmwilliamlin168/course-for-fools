@@ -85,9 +85,9 @@ export default function Test({ testData, testAction }) {
                         >
                             Next
                         </button>
-                    </div>
-                    <div className="text-sm py-4">
-                        Zero to Hero Pre-Registration Assessment.
+                        <div className="text-sm py-4 font-normal">
+                            Zero to Hero Pre-Registration Assessment.
+                        </div>
                     </div>
                 </div>
             )
