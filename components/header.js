@@ -9,6 +9,14 @@ const internalLinks = [
     label: "Contact",
     url: "mailto:ytmwilliamlin@gmail.com",
 },
+{
+    label: "Online Judge",
+    url: null,
+},
+{
+    label: "Our Story",
+    url: null,
+},
 ];
 
 export default function Header() {
@@ -26,15 +34,22 @@ export default function Header() {
                 </Link>
                 <div className="hidden sm:ml-8 sm:flex space-x-8">
                 {internalLinks.map(link => (
-                    <Link
-                        href={link.url}
-                        key={link.url}
-                    >
-                        <a className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
->
-                    {link.label}
-                    </a>
-                    </Link>
+                    link.url ? 
+                        <Link
+                            href={link.url}
+                            key={link.url}
+                        >
+                            <a className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                {link.label}
+                            </a>
+                        </Link>
+                    :
+                        <a
+                            className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+                            title="Coming soon!"
+                        >
+                            {link.label}
+                        </a>
                 ))}
                 </div>
             </div>
