@@ -71,7 +71,7 @@ export default function Home() {
                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                   Learn Competitive Programming with no previous experience required.
                   <br />
-                  Taught by blah blha blah
+                  Taught by tmw god
                 </p>
                 <div className="mt-8 sm:mt-12 space-x-4">
                   <button

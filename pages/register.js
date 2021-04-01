@@ -1,6 +1,8 @@
+import Head from 'next/head';
 import {useEffect, useState} from 'react';
 
 import Test from '../components/test';
+import Header from '../components/header';
 import useFirebase from '../utils/useFirebase';
 
 export default function Register() {
@@ -55,6 +57,11 @@ export default function Register() {
 
     return (
         <>
+            <Head>
+                <title>Course | Register</title>
+                <link rel="icon" href="/favicon.ico" />
+                </Head>
+            <Header />
             {
                 !testData?
                     'Loading'
