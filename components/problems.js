@@ -61,6 +61,37 @@ export default [
         );
     },
     ({testAction}) => {
+        const [state, setState] = useState(new Array(25).fill(0));
+        return (
+            <div className="text-center pt-4">
+                <p className="text-3xl">
+                    Highlight at most 7 cells so that all unhighlighted cells are next to a highlighted cell
+                </p>
+                <br />
+                <div className="inline-grid grid-cols-5 gap-1">
+                    {state.map((s, i) => {
+                        return (
+                            <button
+                                key={i}
+                                className={'inline-block w-14 h-14 border border-blue-500'+(s?' bg-blue-500':'')}
+                                onClick={() => {
+                                    const newState = [...state];
+                                    newState[i]=1-newState[i];
+                                    setState(newState);
+                                }}
+                            />
+                        )
+                    })}
+                </div>
+                <br />
+                <br />
+                <SubmitButton
+                    onClick={() => testAction(`/api/testupdate?pid=2&action=${state.join('')}&`)}
+                />
+            </div>
+        );
+    },
+    ({testAction}) => {
         const [valueA, setValueA] = useState();
         const [valueB, setValueB] = useState();
         const [valueC, setValueC] = useState();
@@ -93,7 +124,7 @@ export default [
                 <br />
                 <br />
                 <SubmitButton
-                    onClick={() => testAction(`/api/testupdate?pid=2&action=${valueA}${valueB}${valueC}&`)}
+                    onClick={() => testAction(`/api/testupdate?pid=3&action=${valueA}${valueB}${valueC}&`)}
                 />
             </div>
         )
@@ -144,7 +175,7 @@ export default [
                 </div>
                 <br />
                 <SubmitButton
-                    onClick={() => testAction(`/api/testupdate?pid=3&action=${selected}&`)}
+                    onClick={() => testAction(`/api/testupdate?pid=4&action=${selected}&`)}
                 />
             </div>
         )
