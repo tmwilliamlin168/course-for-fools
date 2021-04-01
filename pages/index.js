@@ -103,120 +103,120 @@ export default function Home() {
           </div>
         </div>
 
-        <div class="relative bg-white py-16 sm:py-24 lg:py-32">
-          <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-            <h2 class="text-base font-semibold tracking-wider text-blue-500 uppercase">Learn Smarter, not Harder</h2>
-            <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+        <div className="relative bg-white py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+            <h2 className="text-base font-semibold tracking-wider text-blue-500 uppercase">Learn Smarter, not Harder</h2>
+            <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
               Everything you need to become a CP master
             </p>
-            <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+            <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
               We cover everything you will ever need to know. All in one packaged, easy-to-digest course.
             </p>
-            <div class="mt-12">
-              <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+            <div className="mt-12">
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Clear Roadmap</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Clear Roadmap</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         Our roadmap provides instruction from newbie to grandmaster - you will never feel lost along the way.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Experienced Instructors</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Experienced Instructors</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         Above 90% of our instructors have either won Google Kickstart rounds or gotten gold medals at IOI.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Detailed Explanations</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Detailed Explanations</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         Through a combination of diagrams, videos, and interactive visualizers, you will learn the toughest concepts with ease.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Thinking Strategies</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Thinking Strategies</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         Hand-crafted thinking exercises to help you approach problems mathematically and logically.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Professional Help</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Professional Help</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         No more fear of being downvoted for asking questions - our instructors are here to support you, no matter what you need.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="pt-6">
-                  <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                    <div class="-mt-6">
+                <div className="pt-6">
+                  <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div className="-mt-6">
                       <div>
-                        <span class="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
-                          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-blue-400 to-blue-600 rounded-md shadow-lg">
+                          <svg className="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                           </svg>
                         </span>
                       </div>
-                      <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Contest Strategies</h3>
-                      <p class="mt-5 text-base text-gray-500">
+                      <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">Contest Strategies</h3>
+                      <p className="mt-5 text-base text-gray-500">
                         Tips and tricks from years worth of experience in contests for you to optimize contest rankings.
                       </p>
                     </div>
