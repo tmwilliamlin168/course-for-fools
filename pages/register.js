@@ -67,7 +67,7 @@ export default function Register() {
             {testData?.stage === 0 && <Header />}
             {
                 !testData?
-                    'Loading'
+                    ''
                 :
                     <Test testData={testData} testAction={testAction} />
             }
