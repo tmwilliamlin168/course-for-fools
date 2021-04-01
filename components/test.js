@@ -34,18 +34,25 @@ export default function Test({ testData, testAction }) {
         )
     }
 
+    let score=0;
+    problems.forEach((pr, id) => {
+        if(testData?.problems[id]?.ac)
+            ++score;
+    });
+
     if(testData.stage === 1) {
         if(timeLeft > 0) {
             return (
                 <>
                     <h1>The Actual Test</h1>
+                    <h2>Current score: {score}</h2>
                     <h2>Time left: {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}</h2>
                     {problems.map((pr, id) => {
                         return (
                             <div key={id}>
                                 {pr(testAction)}
-                                {testData.problems && testData.problems[id] && testData.problems[id].ac && 'Accepted'}
-                                {testData.problems && testData.problems[id] && testData.problems[id].wa && 'WA'}
+                                {testData?.problems[id]?.ac && 'Accepted'}
+                                {testData?.problems[id]?.wa && 'WA'}
                             </div>
                         )
                     })}
@@ -53,7 +60,11 @@ export default function Test({ testData, testAction }) {
             )
         }
         return (
-            "no time left"
+            <>
+                No time left
+                <br />
+                Final score: {score}
+            </>
         )
     }
 };
