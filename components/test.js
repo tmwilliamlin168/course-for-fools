@@ -49,7 +49,15 @@ export default function Test({ testData, testAction }) {
                             {(''+Math.floor(timeLeft/60)).padStart(2, '0')+':'+(''+timeLeft%60).padStart(2, '0')}
                         </div>
                         Score: {score}/{problems.length}
+                        <div className="relative pt-1">
+                        <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
+                            <div style={{width:`${100*curProb/problems.length}%`, transition:"width 0.3s"}}
+                            className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500">
+                            </div>
+                        </div>
                     </div>
+                    </div>
+
                     <div className="flex-1 overflow-y-scroll">
                         {/*problems.map((pr, id) => {
                             return (
