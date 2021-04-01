@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 import Header from '../components/header'
 import useFirebase from '../utils/useFirebase';
 
 export default function Home() {
+  const router = useRouter();
+
   const firebase = useFirebase();
 
   const firebaseLogin = () => {
@@ -14,7 +17,7 @@ export default function Home() {
 
     firebase.auth()
       .signInWithPopup(provider)
-      .then((result) => {
+      .then(async (result) => {
         /** @type {firebase.auth.OAuthCredential} */
         var credential = result.credential;
 
@@ -22,11 +25,14 @@ export default function Home() {
         var token = credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        // var token2 = await user.getIdToken();
         // ...
-        console.log(result)
-        console.log(credential)
-        console.log(token)
-        console.log(user)
+        // console.log(result)
+        // console.log(credential)
+        // console.log(token)
+        // console.log(user)
+        // console.log(token2);
+        router.push('/register');
       }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
@@ -36,10 +42,10 @@ export default function Home() {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
-        console.log(errorCode)
-        console.log(errorMessage)
-        console.log(email)
-        console.log(credential)
+        // console.log(errorCode)
+        // console.log(errorMessage)
+        // console.log(email)
+        // console.log(credential)
       });
 
   };
