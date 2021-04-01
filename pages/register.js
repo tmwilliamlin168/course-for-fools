@@ -8,10 +8,10 @@ export default function Register() {
     const [user, setUser] = useState();
     const [lastTokenRet, ] = useState({time: new Date().getTime()});
 
-    const getIdToken = async () => {
+    const getIdToken = async (x) => {
         const curTime=new Date().getTime();
         lastTokenRet.time = curTime;
-        const token = await user.getIdToken(true)
+        const token = await (x || user).getIdToken(true)
         return token;
     };
 
@@ -31,7 +31,7 @@ export default function Register() {
     useEffect(() => {
         const handle = setInterval(() => {
           const user = firebase.auth().currentUser;
-          if (user && new Date().getTime()-lastTokenRet.time > 5*60*1000) getIdToken();
+          if (user && new Date().getTime()-lastTokenRet.time > 5*60*1000) getIdToken(user);
         }, 6 * 60 * 1000);
         
         return () => clearInterval(handle);
@@ -54,7 +54,12 @@ export default function Register() {
         <>
             <h1>Test</h1>
             <p>
-                {!testData?'Loading':JSON.stringify(testData)}
+                {
+                    !testData?
+                        'Loading'
+                    :
+                        JSON.stringify(testData)
+                }
             </p>
         </>
     )
