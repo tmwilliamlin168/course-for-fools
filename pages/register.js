@@ -27,9 +27,7 @@ export default function Register() {
             setUser(null);
             router.push('/');
           } else {
-            const token = await user.getIdToken();
             setUser(user);
-            console.log('final token', token);
           }
         });
     }, [firebase]);
