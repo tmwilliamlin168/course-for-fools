@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import SubmitButton from './SubmitButton';
 
@@ -16,6 +16,10 @@ const Pattern1 = ({a}) => {
         </div>
     );
 };
+
+const Square1 = ({c}) => {
+    return <div className={"inline-block border border-black h-12 w-12 "+c}></div>;
+}
 
 export default [
     ({testAction}) => {
@@ -180,5 +184,67 @@ export default [
             </div>
         )
     },
-    ({testAction}) => 'problem 2',
+    ({testAction, problemData}) => {
+        const size = [3, 5, 7, 9];
+        const [waiting, setWaiting] = useState(false);
+        useEffect(() => {
+            setWaiting(false);
+        }, [problemData?.turn]);
+        return (
+            <div className="text-center pt-4">
+                <div className="mx-auto text-3xl w-3/4">
+                    Let's play a game!
+                    <br />
+                    You will play against Bob and take turns capturing tiles with your armies. To win the game, you need to have your army separated into fewer regions than Bob. A region is a set of (horizontally) connected cells captured by the same player.
+                    <br />
+                    For example,{' '}
+                    <div className="inline-flex space-x-1">
+                        <Square1 c="bg-blue-500" />
+                        <Square1 c="bg-blue-500" />
+                        <Square1 c="bg-red-500" />
+                        <Square1 c="bg-red-500" />
+                        <Square1 c="bg-blue-500" />
+                        <Square1 c="bg-red-500" />
+                        <Square1 c="bg-blue-500" />
+                    </div>
+                    {' '}is a win for you because Bob has 3 regions and you only have 2.
+                    <br />
+                    The game ends when there are no tiles left to capture. Bob has graciously allowed you to go first!
+                </div>
+                <br />
+                {size.map((s,i) => {
+                    return (
+                        <div key={i} className="flex space-x-1 justify-center m-4">
+                            {(() => {
+                                const l=[];
+                                for(let j=0; j<s; ++j) {
+                                    l.push(
+                                        <button
+                                            key={j}
+                                            disabled={waiting || problemData?.board && problemData.board[i][j] !== '.'}
+                                            onClick={() => {
+                                                problemData.board[i][j]='r';
+                                                setWaiting(true);
+                                                testAction(`/api/testupdate?pid=5&action=${i},${j}&`);
+                                            }}
+                                        >
+                                            <Square1 c={!problemData?.board || problemData.board[i][j] === '.' ? '' : (problemData.board[i][j] === 'b' ? "bg-blue-500" : "bg-red-500")} />
+                                        </button>
+                                    );
+                                }
+                                return l;
+                            })()}
+                        </div>
+                    )
+                })}
+                <br />
+                <button
+                    className="rounded bg-blue-500 py-2 px-4 text-white text-2xl"
+                    onClick={() => testAction('/api/testupdate?pid=5&action=reset&')}
+                >
+                    Reset
+                </button>
+            </div>
+        );
+    },
 ];

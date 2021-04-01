@@ -1,12 +1,13 @@
 import checkProblem from '../../utils/checkProblem';
 import {database} from '../../utils/firebase';
+import verifyInteger from '../../utils/verifyInteger';
 import verifyToken from '../../utils/verifyToken';
 
 const usersRef=database.ref('users');
 
 export default async (req, res) => {
     const pid = +req.query.pid;
-    if(isNaN(pid) || !Number.isInteger(pid)) {
+    if(!verifyInteger(pid)) {
         res.status(400).end();
         return;
     }
