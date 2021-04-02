@@ -7,7 +7,7 @@ const internalLinks = [
 },
 {
     label: "Contact",
-    url: "mailto:ytmwilliamlin@gmail.com",
+    url: "mailto:course@williamlin.io",
 },
 {
     label: "Online Judge",
