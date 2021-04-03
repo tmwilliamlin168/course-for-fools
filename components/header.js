@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+//online judge and our story fake links were there before
 const internalLinks = [
 {
     label: "Pre-Register",
@@ -10,12 +11,8 @@ const internalLinks = [
     url: "mailto:course@williamlin.io",
 },
 {
-    label: "Online Judge",
-    url: null,
-},
-{
     label: "Our Story",
-    url: null,
+    url: '/story',
 },
 ];
 
