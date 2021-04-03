@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import {database} from '../utils/firebase';
+import verifyString, {StringCheck} from '../utils/verifyString';
+
 export default function Result({name}) {
     return (
         <>
@@ -48,8 +51,17 @@ export default function Result({name}) {
     )
 }
 
+const getName = async (id) => {
+    if(!verifyString(id, [StringCheck.FirebaseKey]))
+        return null;
+    const res=await database.ref(`results/${id}`).once('value');
+    if(!res.exists())
+        return null;
+    return (await database.ref(`users/${res.val()}/name`).once('value')).val();
+};
+
 export async function getServerSideProps(context) {
-    const name = context.query.id || '[name]';
+    const name = await getName(context.query.id) || '[name]';
     return {
         props: {name},
     }
