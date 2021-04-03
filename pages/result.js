@@ -40,7 +40,7 @@ export default function Result({name}) {
                         </p>
                         <br/>
 
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-500 text-base mx-7">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-500 text-base mx-7 font-bold">
                             Zero to Hero
                         </span>
                         </div>
