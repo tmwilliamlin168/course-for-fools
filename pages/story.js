@@ -29,7 +29,7 @@ export default function Story() {
                     Overall, things worked out smoothly. People were pre-registering and failing to pass. Some people soon realized that the last 3 problems were impossible, while others were emailing me, asking for more chances.
                     <br />
                     <br />
-                    Fast forward to 4/2, I decided it was time to send out decision letters to the 7000+ people who have pre-registered. I tried the mailgun API at night and I started sending out emails with it on 4/3 in the afternoon. Let's see if it works... [to be continued]
+                    Fast forward to 4/2, I decided it was time to send out decision letters to the 7000+ people who have pre-registered. I tried the mailgun API at night and I started sending out emails with it on 4/3 in the afternoon. Let's see if it works... <span className="font-bold">[to be continued]</span>
                     <br />
                     <br />
                     Thanks to CJ Quines and Cynthia Du for help with the website. Thanks to Nathan Wang for providing the template for the landing page. And most importantly, thanks to all of you who fell for the prank :)
