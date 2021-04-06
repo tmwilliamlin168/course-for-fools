@@ -122,6 +122,8 @@ export default function Test({ testData, testAction }) {
                             Solutions to this pre-registration test will be released soon.
                             <br />
                             Come back again once you have learned the fundamentals!
+                            <br />
+                            Note: April Fools' is over, please read Our Story
                         </p>
                     </div>
                 </div> 
